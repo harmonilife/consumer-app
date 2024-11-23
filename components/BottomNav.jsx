@@ -13,7 +13,7 @@ export default function BottomNavigation() {
       <Pressable style={styles.button} onPress={() => router.push('/home')}>
         <Icon name='home' style={styles.navButton} />
       </Pressable>
-      <Pressable style={styles.button} onPress={() => router.push('/category')}>
+      <Pressable style={styles.button} onPress={() => router.push('category')}>
         <Icon name='category' style={styles.navButton} />
       </Pressable>
       <Pressable style={styles.button} onPress={() => router.push('/notifications')}>

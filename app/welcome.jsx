@@ -27,16 +27,16 @@ const Welcome = () => {
         {/* footer */}
         <View style={styles.footer}>
           <Button
-            title='Get Started'
-            onPress={() => router.push('signUp')}
+            title='Log In'
+            onPress={() => router.push('login')}
           />
           <View style={styles.loginTextContainer}>
             <Text style={styles.loginText}>
-              Already have an account!
+              Don't have an account?
             </Text>
-            <Pressable onPress={() => router.push('login')}>
+            <Pressable onPress={() => router.push('signUp')}>
               <Text style={[styles.loginText, {color: theme.colors.primaryDark, fontWeight: theme.fonts.semiBold}]}>
-                Login
+                Register
               </Text>
             </Pressable>
           </View>

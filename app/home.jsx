@@ -8,6 +8,8 @@ import { hp } from '../helpers/common'
 import ImageSlider from '../components/ImageSlider'
 import HomeCategories from '../components/HomeCategories'
 
+
+
 const Home = () => {
   return (
     <ScreenWrapper>
@@ -26,8 +28,7 @@ const Home = () => {
           <View className="flex" >
             <HomeCategories />
           </View>
-
-
+          
         </View>
         <BottomNavigation />
     </ScreenWrapper>
