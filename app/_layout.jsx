@@ -11,7 +11,12 @@ const _layout = () => {
         screenOptions={{
           headerShown: false,
         }} 
-      />
+      >
+        <Stack.Screen
+          name="placeDetail"
+          options={{ title: 'Place Details' }} // Optional: Customize header if needed
+        />
+      </Stack>
     </>
   );
 };

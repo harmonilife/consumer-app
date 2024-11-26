@@ -1,65 +1,94 @@
-import { FlatList, StyleSheet, Text, View, Image } from 'react-native'
-import React from 'react'
-import { hp, wp } from '../helpers/common'
-import { homeCategories } from '../constants'
-import { TouchableOpacity } from 'react-native'
-import { LinearGradient } from 'expo-linear-gradient'
+// components/HomeCategories.jsx
+
+import React from 'react';
+import { FlatList, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { hp, wp } from '../helpers/common';
+import { homeCategories } from '../constants';
+import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter } from 'expo-router';
+import { theme } from '../constants/theme';
 
 const HomeCategories = () => {
+  const router = useRouter();
   return (
-    <View className='mx-4'>
-      <Text style={{fontSize: hp(3)}} className='font-semibold text-neutral-700' >
-        Categories
-      </Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Categories</Text>
 
-      <FlatList 
+      <FlatList
         data={homeCategories}
         numColumns={2}
-        keyExtractor={item => item.name}
+        keyExtractor={(item) => item.name}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{paddingBottom: 50, paddingTop: 20}}
+        contentContainerStyle={{ paddingBottom: 50, paddingTop: 20 }}
         columnWrapperStyle={{
-            justifyContent: 'space-between'
+          justifyContent: 'space-between',
         }}
-        renderItem={({item, index}) => <CategoryCard index={index} item={item} />}
+        renderItem={({ item }) => <CategoryCard router={router} item={item} />}
       />
     </View>
-  )
-}
+  );
+};
 
-const CategoryCard = ({item, index}) => {
-    return (
-        <View>
-            <TouchableOpacity
-                style={{width: wp(44), height: hp(22)}}
-                className='flex justify-end p-4 mb-4'>
-                   <Image 
-                        source={item.image}
-                        resizeMode='cover'
-                        style={{width: wp(44), height: hp(22)}}
-                        className='rounded-[35px] absolute'
-                    />
+const CategoryCard = ({ item, router }) => {
+  return (
+    <TouchableOpacity
+      onPress={() => router.push({ pathname: 'category', params: { categoryName: item.name } })}
+      style={styles.card}
+    >
+      <Image
+        source={item.image}
+        resizeMode="cover"
+        style={styles.image}
+      />
 
-                    <LinearGradient
-                        colors={['transparent', 'rgba(0,0,0,0.9)']}
-                        style={{width: wp(44), height: hp(15)}}
-                        start={{x: 0.5, y: 0}}
-                        end={{x: 0.5, y:1}}
-                        className="absolute bottom-0 rounded-b-[35px]"
-                    />
+      <LinearGradient
+        colors={['transparent', 'rgba(0,0,0,0.9)']}
+        style={styles.gradient}
+        start={{ x: 0.5, y: 0 }}
+        end={{ x: 0.5, y: 1 }}
+      />
 
-                    <Text
-                        style={{fontSize: hp(2.3)}}
-                        className='text-white font-semibold text-center tracking-wide'
-                    >
-                        {item?.name}
-                    </Text>
-                
-            </TouchableOpacity>
-        </View>
-    )
-}
+      <Text style={styles.categoryName}>
+        {item.name}
+      </Text>
+    </TouchableOpacity>
+  );
+};
 
-export default HomeCategories
+export default HomeCategories;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    marginHorizontal: wp(4),
+  },
+  title: {
+    fontSize: hp(3),
+    fontWeight: theme.fonts.semiBold,
+    color: theme.colors.text,
+  },
+  card: {
+    width: wp(44),
+    height: hp(22),
+    marginBottom: hp(2),
+    borderRadius: 35,
+    overflow: 'hidden',
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+  },
+  gradient: {
+    width: '100%',
+    height: hp(15),
+    position: 'absolute',
+    bottom: 0,
+  },
+  categoryName: {
+    fontSize: hp(2.3),
+    color: 'white',
+    fontWeight: theme.fonts.semiBold,
+    textAlign: 'center',
+    marginBottom: hp(1),
+  },
+});
