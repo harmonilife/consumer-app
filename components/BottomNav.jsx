@@ -1,6 +1,7 @@
-// BottomNavigation.js
+// components/BottomNavigation.js
+
 import React from 'react';
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Pressable, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 import Icon from '../assets/icons/Index';
 import { hp } from '../helpers/common';
@@ -13,7 +14,7 @@ export default function BottomNavigation() {
       <Pressable style={styles.button} onPress={() => router.push('/home')}>
         <Icon name='home' style={styles.navButton} />
       </Pressable>
-      <Pressable style={styles.button} onPress={() => router.push('category')}>
+      <Pressable style={styles.button} onPress={() => router.push({ pathname: '/category', params: { categoryName: 'Gym' } })}>
         <Icon name='category' style={styles.navButton} />
       </Pressable>
       <Pressable style={styles.button} onPress={() => router.push('/notifications')}>
@@ -46,6 +47,6 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   navButton: {
-    bottom: hp(1)
-  }
+    bottom: hp(1),
+  },
 });

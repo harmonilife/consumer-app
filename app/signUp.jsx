@@ -1,3 +1,5 @@
+// app/signUp.jsx
+
 import { Alert, Pressable, StyleSheet, Text, View } from 'react-native';
 import React, { useRef, useState } from 'react';
 import ScreenWrapper from '../components/ScreenWrapper';

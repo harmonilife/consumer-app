@@ -22,7 +22,7 @@ const Category = () => {
         <FlatList
           data={places}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <PlaceCard place={item} router={router} />}
+          renderItem={({ item }) => <PlaceCard place={item} categoryName={categoryName} router={router} />}
           ListEmptyComponent={
             <Text style={styles.noPlacesText}>No places found for this category.</Text>
           }
@@ -33,16 +33,13 @@ const Category = () => {
   );
 };
 
-const PlaceCard = ({ place, router }) => {
+const PlaceCard = ({ place, router, categoryName }) => {
   const navigateToDetail = () => {
     router.push({
       pathname: 'placeDetail',
       params: {
-        name: place.name,
-        address: place.address,
-        distance: place.distance,
-        feesPerMonth: place.feesPerMonth,
-        image: place.image,
+        id: place.id, // Pass only the unique identifier
+        categoryName: categoryName, // Pass the category name to fetch data
       },
     });
   };

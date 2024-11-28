@@ -1,3 +1,5 @@
+// components/ImageSlider.jsx
+
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import { hp, wp } from '../helpers/common'
