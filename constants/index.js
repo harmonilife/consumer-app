@@ -3,6 +3,15 @@
 export const supabaseURL = 'https://xrgfqgcirekpbmevplcp.supabase.co';
 export const supabaseAnonKey = 'your_supabase_anon_key';
 
+
+// User profile data
+export const userProfile = {
+  name: 'Pranjal Maurya',
+  email: 'prajal@harmonilife.in',
+  profileImage: require('../assets/images/Profile-Pranjal.png'), // Ensure you have this image in your assets
+};
+
+
 // Existing homeCategories array
 export const homeCategories = [
   {
@@ -11,15 +20,15 @@ export const homeCategories = [
   },
   {
     name: 'Sports',
-    image: require('../assets/images/gym.webp'),
+    image: require('../assets/images/sports.webp'),
   },
   {
     name: 'Wellness',
-    image: require('../assets/images/gym.webp'),
+    image: require('../assets/images/wellness.webp'),
   },
   {
     name: 'Therapy',
-    image: require('../assets/images/gym.webp'),
+    image: require('../assets/images/therapy.webp'),
   },
 ];
 
@@ -30,7 +39,7 @@ export const categoryPlaces = {
       id: 'gym-1', // Made unique by prefixing
       name: 'FitLife Gym',
       address: '123 Main St, City',
-      image: require('../assets/images/gym.webp'), // Ensure this image exists
+      image: require('../assets/images/gym1.webp'), // Ensure this image exists
       distance: '0.5 km',
       feesPerMonth: '$50',
       amenities: ['Shower', 'Sauna', 'Parking', 'Wi-Fi'],
@@ -39,7 +48,7 @@ export const categoryPlaces = {
       id: 'gym-2',
       name: 'StrongBody Gym',
       address: '456 Elm St, City',
-      image: require('../assets/images/gym.webp'),
+      image: require('../assets/images/gym2.webp'),
       distance: '1.2 km',
       feesPerMonth: '$50',
       amenities: ['Parking', 'Wi-Fi'],
@@ -51,7 +60,7 @@ export const categoryPlaces = {
       id: 'sports-1',
       name: 'City Sports Center',
       address: '789 Oak St, City',
-      image: require('../assets/images/gym.webp'),
+      image: require('../assets/images/sports1.webp'),
       distance: '0.8 km',
       feesPerMonth: '$50',
       amenities: ['Parking', 'Wi-Fi'],
@@ -60,7 +69,7 @@ export const categoryPlaces = {
       id: 'sports-2',
       name: 'Downtown Stadium',
       address: '321 Pine St, City',
-      image: require('../assets/images/gym.webp'),
+      image: require('../assets/images/sports2.webp'),
       distance: '2.0 km',
       feesPerMonth: '$50',
       amenities: ['Shower', 'Wi-Fi'],
@@ -72,7 +81,7 @@ export const categoryPlaces = {
       id: 'wellness-1',
       name: 'Harmony Wellness Spa',
       address: '654 Maple St, City',
-      image: require('../assets/images/gym.webp'),
+      image: require('../assets/images/wellness1.webp'),
       distance: '1.5 km',
       feesPerMonth: '$50',
       amenities: ['Sauna', 'Wi-Fi'],
@@ -81,7 +90,7 @@ export const categoryPlaces = {
       id: 'wellness-2',
       name: 'Zen Wellness Center',
       address: '987 Cedar St, City',
-      image: require('../assets/images/gym.webp'),
+      image: require('../assets/images/wellness2.webp'),
       distance: '2.5 km',
       feesPerMonth: '$50',
       amenities: ['Shower', 'Parking'],
@@ -93,7 +102,7 @@ export const categoryPlaces = {
       id: 'therapy-1',
       name: 'Healing Hands Therapy',
       address: '246 Birch St, City',
-      image: require('../assets/images/gym.webp'),
+      image: require('../assets/images/therapy1.webp'),
       distance: '0.7 km',
       feesPerMonth: '$50',
       amenities: ['Wi-Fi'],
@@ -102,7 +111,7 @@ export const categoryPlaces = {
       id: 'therapy-2',
       name: 'Mind & Body Therapy',
       address: '135 Spruce St, City',
-      image: require('../assets/images/gym.webp'),
+      image: require('../assets/images/therapy2.webp'),
       distance: '1.3 km',
       feesPerMonth: '$50',
       amenities: ['Parking', 'Shower'],

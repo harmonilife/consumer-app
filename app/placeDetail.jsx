@@ -122,7 +122,7 @@ export default PlaceDetail;
 const styles = StyleSheet.create({
   container: {
     padding: wp(5),
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
     alignItems: 'center',
     paddingBottom: hp(5), // Ensure button is visible
   },

@@ -68,10 +68,11 @@ const styles = StyleSheet.create({
   },
   card: {
     width: wp(44),
-    height: hp(22),
+    height: hp(12),
     marginBottom: hp(2),
-    borderRadius: 35,
+    borderRadius: 15,
     overflow: 'hidden',
+    justifyContent: 'center'
   },
   image: {
     width: '100%',

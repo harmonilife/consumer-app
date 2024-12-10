@@ -7,6 +7,7 @@ import { categoryPlaces } from '../constants';
 import { theme } from '../constants/theme';
 import { hp, wp } from '../helpers/common';
 import ScreenWrapper from '../components/ScreenWrapper';
+import { StatusBar } from 'expo-status-bar';
 
 const Category = () => {
   const router = useRouter();
@@ -17,6 +18,7 @@ const Category = () => {
 
   return (
     <ScreenWrapper>
+      <StatusBar style='dark' />
       <View style={styles.container}>
         <Text style={styles.headerText}>{categoryName} Near You</Text>
         <FlatList
@@ -61,7 +63,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: wp(5),
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
   },
   headerText: {
     fontSize: hp(3),
@@ -71,8 +73,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   placeCard: {
+    height: hp(40),
     marginBottom: hp(3),
-    borderRadius: 10,
+    borderRadius: 20,
     overflow: 'hidden',
     backgroundColor: '#f9f9f9',
     elevation: 2, // For Android shadow
@@ -83,7 +86,7 @@ const styles = StyleSheet.create({
   },
   placeImage: {
     width: '100%',
-    height: hp(20), // Adjust height as needed
+    height: hp(30), // Adjust height as needed
   },
   placeInfo: {
     padding: hp(1.5),

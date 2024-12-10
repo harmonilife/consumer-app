@@ -9,6 +9,10 @@ import Password from './password'
 import Profile from './Profile'
 import Notification from './Notification'
 import Category from './Category'
+import Moon from "./Moon"
+import Settings from './Setting'
+import Gift from './Refferals'
+import UserIcon from './User'
 
 const icons ={
     home: Home,
@@ -18,7 +22,11 @@ const icons ={
     password: Password,
     profile: Profile,
     notification: Notification,
-    category: Category
+    category: Category,
+    moon: Moon,
+    settings: Settings,
+    gift: Gift,
+    user: UserIcon,
 }
 
 const Icon = ({name, ...props}) => {  
