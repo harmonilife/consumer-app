@@ -7,7 +7,7 @@ export const supabaseAnonKey = 'your_supabase_anon_key';
 // User profile data
 export const userProfile = {
   name: 'Pranjal Maurya',
-  email: 'prajal@harmonilife.in',
+  email: 'pranjal@harmonilife.in',
   profileImage: require('../assets/images/Profile-Pranjal.png'), // Ensure you have this image in your assets
 };
 

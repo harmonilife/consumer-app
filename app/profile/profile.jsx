@@ -4,12 +4,12 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, Pressable, ScrollView } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useRouter } from 'expo-router';
-import ScreenWrapper from '../components/ScreenWrapper';
-import Icon from '../assets/icons/Index';
-import { theme } from '../constants/theme';
-import { hp, wp } from '../helpers/common';
-import { userProfile } from '../constants';
-import HorizontalSection from '../components/HorizontalSection'; // Import the new component
+import ScreenWrapper from '../../components/ScreenWrapper';
+import Icon from '../../assets/icons/Index';
+import { theme } from '../../constants/theme';
+import { hp, wp } from '../../helpers/common';
+import { userProfile } from '../../constants';
+import HorizontalSection from '../../components/HorizontalSection'; // Import the new component
 
 const Profile = () => {
   const router = useRouter();
@@ -70,14 +70,32 @@ const Profile = () => {
         <View style={styles.sectionsContainer}>
           <HorizontalSection
             iconName="settings"
-            label="Account Settings"
-            subLabels={['Notifications', 'Contact Details', 'Payments']}
+            label="Profile Information"
+            subLabels={['Contact Details', 'Profile picture', 'Membership']}
+            onPress={navigateToAccountSettings}
+          />
+          <HorizontalSection
+            iconName="settings"
+            label="My bookings"
+            subLabels={['Appointments', 'Canceled bookings']}
+            onPress={navigateToAccountSettings}
+          />
+          <HorizontalSection
+            iconName="settings"
+            label="Payments and refunds"
+            subLabels={['Transaction history', 'Bank accounts', 'Payment options']}
+            onPress={navigateToAccountSettings}
+          />
+          <HorizontalSection
+            iconName="settings"
+            label="Settings"
+            subLabels={['Appearance', '']}
             onPress={navigateToAccountSettings}
           />
           <HorizontalSection
             iconName="gift"
-            label="Referrals"
-            subLabels={['Reffer a friend', 'My Refferals']}
+            label="Vouchers"
+            subLabels={['Reffer a friend', 'Your vouchers', 'Gift cards']}
             onPress={navigateToReferrals}
           />
           <HorizontalSection
